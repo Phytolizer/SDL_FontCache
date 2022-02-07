@@ -18,4 +18,7 @@ file(COPY test/utf8_sample.txt DESTINATION ${CMAKE_BINARY_DIR})
 file(COPY test/fonts/FreeSans.ttf DESTINATION ${CMAKE_BINARY_DIR}/fonts)
 target_link_libraries(FontCache-tests FontCache SDL2::SDL2main)
 
+if(UNIX)
+    target_link_libraries(FontCache-tests X11 Xext)
+endif()
 
