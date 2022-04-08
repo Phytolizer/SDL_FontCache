@@ -11,6 +11,8 @@ add_library(FontCache
 target_include_directories(FontCache PUBLIC .)
 target_link_libraries(FontCache PUBLIC SDL2::SDL2 SDL2::SDL2_ttf)
 
+add_library(FontCache::FontCache ALIAS FontCache)
+
 add_executable(FontCache-tests
 	test/main.c
 )
